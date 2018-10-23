@@ -2,7 +2,7 @@
   <img src="hardware/physicalLeg.jpg" width="500" height="600" title="Physical Leg">
 </p>
 
-%% Description %%
+% Jumping Energy Harvester
 
 Using the variable damping on a VSA (Variable Stiffness Actuator) can improve the 
 energy efficiency, especially on a highly dynamic robots. This project aims to exploit
@@ -19,7 +19,7 @@ The simulation files are written in MATLAB. To run the simulation execute the fo
 * The 3D CAD files with .step extension are provided in:
  /hardware/Model/STEPFiles 
 
-Also, the assembled model with and without the vertical stand are given in:
+* The assembled model with and without the vertical stand are given in:
  /hardware/Model/Assembled
  
 <p align="center">
