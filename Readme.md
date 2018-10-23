@@ -8,17 +8,17 @@ that effect on a vertical jumping robot based on the MACCEPA-VD (The Mechanicall
  
 ## How to run ## 
 
-The simulation files are written in MATLAB. To run the simulation execute the following file
-./Simulations/maccepaHopperSimulation
+The simulation files are written in MATLAB. To run the simulation execute the following file:
+* ./Simulations/maccepaHopperSimulation
 
 
 ## 3D Model ##
 
-* The 3D CAD files with .step extension are provided in:
- /hardware/Model/STEPFiles 
+The 3D CAD files with .step extension are provided in:
+* /hardware/Model/STEPFiles 
 
-* The assembled model with and without the vertical stand are given in:
- /hardware/Model/Assembled
+The assembled model with and without the vertical stand are given in:
+* /hardware/Model/Assembled
  
 <p align="center">
   <img src="hardware/leg3DModel.PNG" width="500" title="3D Leg model">
