@@ -43,6 +43,8 @@ test_components:
 	cd ${KERNEL_DIR}; make RF_kernel CC=gcc # TODO: The whole kernel is not needed to be compiled
 	cd ${COMPONENTS_DIR}; make test_components
 	
+flash_target:
+	st-flash write ./bld/target/ARM_main.bin 0x8000000
 clean:
 	rm -rf bld
 	cd ${KERNEL_DIR}; make clean
