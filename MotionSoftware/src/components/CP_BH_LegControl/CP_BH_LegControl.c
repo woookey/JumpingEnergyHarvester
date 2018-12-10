@@ -16,6 +16,8 @@ static RFHandle InitialState(LegControlModule_t* const me, RFEvent *const evt);
 static RFHandle WaitForPower(LegControlModule_t* const me, RFEvent *const evt);
 static RFHandle NoMotionState(LegControlModule_t* const me, RFEvent *const evt);
 
+static void doNothing(void);
+
 void CP_BH_LegControlModuleConstructor(RFAgent * const self)
 {
 	assert(self == LegControlModule);
@@ -46,6 +48,7 @@ RFHandle WaitForPower(LegControlModule_t* const me, RFEvent *const evt)
 	case SS_CP_BH_POWER_MANAGER_POWER_IS_ON_SIGNAL:
 	{
 		// enable motor driver for pre-tensioner
+		doNothing();
 		EXECUTE_TRANSITION((RFAgent const*)me, &NoMotionState);
 	}
 	}
@@ -71,3 +74,5 @@ RFHandle NoMotionState(LegControlModule_t* const me, RFEvent *const evt)
 	}
 	return RF_UNHANDLED;
 }
+
+void doNothing(void){};
