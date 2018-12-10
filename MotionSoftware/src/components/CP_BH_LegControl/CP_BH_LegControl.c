@@ -22,18 +22,18 @@ typedef enum
 } PrivateDefinitions;
 
 
-static RFHandle initialState(LegControlModule_t* const me, RFEvent *const evt);
+static RFHandle InitialState(LegControlModule_t* const me, RFEvent *const evt);
 static RFHandle NoControlState(LegControlModule_t* const me, RFEvent *const evt);
 
 void CP_BH_LegControlModuleConstructor(RFAgent * const self)
 {
 	assert(self == LegControlModule);
 	LegControlModule_t *const me = (LegControlModule_t* const)self;
-	RFBaseAgentConstructor((RFAgent*)me, &initialState);
+	RFBaseAgentConstructor((RFAgent*)me, &InitialState);
 	RFTimerConstructor((RFAgent*) me, (RF_Timer*)&me->LegControlWaitForPowerUpTimeout, LEG_CONTROL_WAIT_FOR_POWER_UP_SIGNAL);
 }
 
-RFHandle initialState(LegControlModule_t* const me, RFEvent *const evt)
+RFHandle InitialState(LegControlModule_t* const me, RFEvent *const evt)
 {
 	(void)evt;
 	(void)me;
