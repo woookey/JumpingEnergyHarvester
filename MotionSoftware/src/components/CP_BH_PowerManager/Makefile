@@ -12,6 +12,7 @@ INCLUDE_DIR += -I${SYSTEM_DIR}
 OBJS = ${KERNEL_DIR}/RF_agents.o
 OBJS += ${KERNEL_DIR}/RF_events.o
 OBJS += ${KERNEL_DIR}/RF_queue.o
+OBJS += ${KERNEL_DIR}/RF_timers.o
 
 ifeq (${CC}, arm-none-eabi-gcc)
 	OBJS += ${CP_HD_LED_DIR}/CP_HD_LEDDriver.c
