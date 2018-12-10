@@ -65,6 +65,14 @@ RFHandle waitForPowerUpState(PowerManagerAgent* const self, RFEvent *const evt)
 	case WAIT_FOR_POWER_UP_SIGNAL:
 	{
 		RFTimer_disarmTimer((RF_Timer*) &self->waitForPowerUpTimer);
+
+		static RFEvent WaitForPowerUpFinishedEvent =
+		{
+				.signalValue = SS_CP_BH_POWER_MANAGER_POWER_IS_ON_SIGNAL,
+				.pendingConsumers = 0,
+				.eventSize = sizeof(RFEvent),
+		};
+		publishEvent((RFEvent const* const)&WaitForPowerUpFinishedEvent);
 		EXECUTE_TRANSITION((RFAgent const*)&self->baseAgent, &powerOnState);
 	}
 	case RF_EXIT_SIGNAL:
