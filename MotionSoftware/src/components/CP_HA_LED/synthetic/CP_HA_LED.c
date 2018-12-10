@@ -6,12 +6,12 @@
 #define CPU_ACTIVITY_LED_PORT 12
 #define POWER_ON_INDICATION_LED_PORT 15
 #define EXECUTING_INDICATION_LED_PORT 14
-#define SAFETY_STOP_INDICATION_LED_PORT 1
+#define SAFETY_STOP_INDICATION_LED_PORT 2
 
 static struct LEDType CPUActivityLEDInstance = { .pin = (uint8_t)CPU_ACTIVITY_LED_PORT, .port = 'D' };
 static struct LEDType powerOnIndicationLEDInstance = { .pin = (uint8_t)POWER_ON_INDICATION_LED_PORT, .port = 'C' };
 static struct LEDType executingIndicationLEDInstance = { .pin = (uint8_t)EXECUTING_INDICATION_LED_PORT, .port = 'D' };
-static struct LEDType safetyStopIndicationLEDInstance = { .pin = (uint8_t)SAFETY_STOP_INDICATION_LED_PORT, .port = 'H' };
+static struct LEDType safetyStopIndicationLEDInstance = { .pin = (uint8_t)SAFETY_STOP_INDICATION_LED_PORT, .port = 'C' };
 
 
 CP_HA_LEDStruct CPUActivityLED = &CPUActivityLEDInstance;
