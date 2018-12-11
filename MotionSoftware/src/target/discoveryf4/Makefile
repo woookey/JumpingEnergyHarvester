@@ -23,6 +23,7 @@ INCLUDE_DIRS += -I../../components/CP_BH_PowerManager/
 INCLUDE_DIRS += -I../../components/CP_HD_LEDDriver/
 INCLUDE_DIRS += -I../../components/CP_HA_LED/
 INCLUDE_DIRS += -I../../components/CP_HA_HardwareSetup/
+INCLUDE_DIRS += -I../../components/CP_BH_LegControl/
 INCLUDE_DIRS += -I../../system/
 INCLUDE_DIRS += -I../../kernel/
 
@@ -36,6 +37,7 @@ DEPENDENCIES += ../../components/CP_BH_PowerManager/CP_BH_PowerManager.o
 DEPENDENCIES += ../../components/CP_HD_LEDDriver/CP_HD_LEDDriver.o
 DEPENDENCIES += ../../components/CP_HA_LED/CP_HA_LED.o
 DEPENDENCIES += ../../components/CP_HA_HardwareSetup/CP_HA_HardwareSetup.o
+DEPENDENCIES += ../../components/CP_BH_LegControl/CP_BH_LegControl.o
 
 KERNEL_OBJS = ${RF_KERNEL_DIR}/RF_porting.o
 KERNEL_OBJS += ${RF_KERNEL_DIR}/RF_queue.o
