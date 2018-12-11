@@ -22,8 +22,8 @@ void CP_BH_LegControlModuleConstructor(RFAgent * const self)
 {
 	assert(self == LegControlModule);
 	LegControlModule_t *const me = (LegControlModule_t* const)self;
-	RFBaseAgentConstructor((RFAgent*)&me, &InitialState);
-	subscribeAgentToSignal((RFAgent*)&me, SS_CP_BH_POWER_MANAGER_POWER_IS_ON_SIGNAL);
+	RFBaseAgentConstructor((RFAgent* const)me, &InitialState);
+	subscribeAgentToSignal((RFAgent* const)me, SS_CP_BH_POWER_MANAGER_POWER_IS_ON_SIGNAL);
 }
 
 RFHandle InitialState(LegControlModule_t* const me, RFEvent *const evt)
