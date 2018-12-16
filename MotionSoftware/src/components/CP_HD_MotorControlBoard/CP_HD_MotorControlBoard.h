@@ -1,0 +1,13 @@
+#ifndef CP_HD_MOTORCONTROLBOARD_H
+#define CP_HD_MOTORCONTROLBOARD_H
+
+typedef struct MotorControlBoardStruct MotorControlBoardStruct_t;
+typedef MotorControlBoardStruct_t* const CP_HD_MotorControlBoard;
+
+extern CP_HD_MotorControlBoard pretensionMotor;
+
+void initialiseMotor(CP_HD_MotorControlBoard MotorControlInstance);
+void setDirectionClockwise(CP_HD_MotorControlBoard MotorControlInstance);
+void setDirectionAnticlockwise(CP_HD_MotorControlBoard MotorControlInstance);
+
+#endif

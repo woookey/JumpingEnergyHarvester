@@ -8,8 +8,11 @@ build_components:
 	make build_components_CP_HA_HardwareSetup
 	make build_components_CP_BH_PowerManager
 	make build_components_CP_HA_DigitalInput
+	make build_components_CP_HD_MotorControlBoard
 	make build_components_CP_BH_LegControl
 	
+build_components_CP_HD_MotorControlBoard:
+	cd ${CUR_DIR}/CP_HD_MotorControlBoard; make CP_HD_MotorControlBoard.o CC=${CC}
 	
 build_components_CP_HA_GPIO:
 	cd ${CUR_DIR}/CP_HA_GPIO; make CP_HA_GPIO.o CC=${CC}
@@ -54,3 +57,4 @@ clean:
 	cd ${CUR_DIR}/CP_HA_DigitalInput; make clean
 	cd ${CUR_DIR}/CP_BH_LegControl; make clean
 	cd ${CUR_DIR}/CP_HA_GPIO; make clean
+	cd ${CUR_DIR}/CP_HD_MotorControlBoard; make clean
