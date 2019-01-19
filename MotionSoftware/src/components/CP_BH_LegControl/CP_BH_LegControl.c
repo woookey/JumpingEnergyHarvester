@@ -4,6 +4,7 @@
 #include <RF_timers.h>
 #include <systemSignals.h>
 #include <CP_HD_MotorControlBoard.h>
+#include <stdint.h>
 
 typedef struct
 {
@@ -48,7 +49,7 @@ RFHandle WaitForPower(LegControlModule_t* const me, RFEvent *const evt)
 	{
 		// enable motor driver for pre-tensioner
 		CP_HD_MotorControlBoard_enableMotor(pretensionMotor);
-		CP_HD_MotorControlBoard_setDirectionAnticlockwise(pretensionMotor);
+		CP_HD_MotorControlBoard_setDirectionClockwise(pretensionMotor);
 		EXECUTE_TRANSITION((RFAgent const*)me, &NoMotionState);
 	}
 	}
@@ -65,6 +66,7 @@ RFHandle NoMotionState(LegControlModule_t* const me, RFEvent *const evt)
 		}
 		case RF_ENTRY_SIGNAL:
 		{
+			CP_HD_MotorControlBoard_startPWM(pretensionMotor, (uint8_t)1);
 			return RF_HANDLED;
 		}
 		case RF_EXIT_SIGNAL:
