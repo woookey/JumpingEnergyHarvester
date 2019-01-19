@@ -12,7 +12,7 @@ ifeq (${CC}, arm-none-eabi-gcc)
 	OBJS = ${CUR_DIR}/target/CP_HA_GPIO.c
 else
 	INC_DIR = -I${CUR_DIR}/synthetic
-	#OBJS = ${CUR_DIR}/synthetic/CP_HA_LED.c
+	OBJS = ${CUR_DIR}/synthetic/CP_HA_GPIO.c
 endif
 
 CP_HA_GPIO.o: ${OBJS} 
