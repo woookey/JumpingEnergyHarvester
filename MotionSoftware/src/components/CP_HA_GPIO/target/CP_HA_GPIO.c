@@ -8,7 +8,7 @@ struct GPIOStruct pretensionMotorClockwiseDirectionInstance =
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
-				.Pin = GPIO_PIN_0,
+				.Pin = 0,
 				.Mode = GPIO_MODE_OUTPUT_PP,
 				.Pull = GPIO_PULLUP,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
@@ -20,7 +20,7 @@ struct GPIOStruct pretensionMotorAnticlockwiseDirectionInstance =
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
-				.Pin = GPIO_PIN_1,
+				.Pin = 2,
 				.Mode = GPIO_MODE_OUTPUT_PP,
 				.Pull = GPIO_PULLUP,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
@@ -32,11 +32,12 @@ struct GPIOStruct pretensionMotorEnableInstance =
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
-				.Pin = GPIO_PIN_2,
+				.Pin = 4,
 				.Mode = GPIO_MODE_OUTPUT_PP,
 				.Pull = GPIO_PULLUP,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
 		},
+
 };
 
 CP_HA_GPIO pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;

@@ -6,8 +6,10 @@ typedef MotorControlBoardStruct_t* const CP_HD_MotorControlBoard;
 
 extern CP_HD_MotorControlBoard pretensionMotor;
 
-void initialiseMotor(CP_HD_MotorControlBoard MotorControlInstance);
-void setDirectionClockwise(CP_HD_MotorControlBoard MotorControlInstance);
-void setDirectionAnticlockwise(CP_HD_MotorControlBoard MotorControlInstance);
+void CP_HD_MotorControlBoard_initialiseMotor(CP_HD_MotorControlBoard MotorControlInstance);
+void CP_HD_MotorControlBoard_setDirectionClockwise(CP_HD_MotorControlBoard MotorControlInstance);
+void CP_HD_MotorControlBoard_setDirectionAnticlockwise(CP_HD_MotorControlBoard MotorControlInstance);
+void CP_HD_MotorControlBoard_enableMotor(CP_HD_MotorControlBoard MotorControlInstance);
+void CP_HD_MotorControlBoard_disableMotor(CP_HD_MotorControlBoard MotorControlInstance);
 
 #endif
