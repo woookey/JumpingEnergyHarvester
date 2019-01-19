@@ -1,49 +1,63 @@
 #include <CP_HA_GPIO.h>
 #include <GPIODefinition.h>
-#include <stm32f4xx_hal_gpio.h>
 #include <stdint.h>
 
-struct GPIOStruct pretensionMotorClockwiseDirectionInstance =
+static struct GPIOStruct pretensionMotorClockwiseDirectionInstance =
 {
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
 				.Pin = 0,
 				.Mode = GPIO_MODE_OUTPUT_PP,
-				.Pull = GPIO_PULLUP,
+				.Pull = GPIO_PULLDOWN,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
 		},
 };
 
-struct GPIOStruct pretensionMotorAnticlockwiseDirectionInstance =
+static struct GPIOStruct pretensionMotorAnticlockwiseDirectionInstance =
 {
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
 				.Pin = 2,
 				.Mode = GPIO_MODE_OUTPUT_PP,
-				.Pull = GPIO_PULLUP,
+				.Pull = GPIO_PULLDOWN,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
 		},
 };
 
-struct GPIOStruct pretensionMotorEnableInstance =
+static struct GPIOStruct pretensionMotorEnableInstance =
 {
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
 				.Pin = 4,
 				.Mode = GPIO_MODE_OUTPUT_PP,
-				.Pull = GPIO_PULLUP,
+				.Pull = GPIO_PULLDOWN,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
 		},
 
 };
 
-CP_HA_GPIO pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
-CP_HA_GPIO pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
-CP_HA_GPIO pretensionMotorEnable = &pretensionMotorEnableInstance;
+static struct GPIOStruct pretensionMotorPWMInstance =
+{
+		.GPIOTypeDef_t = GPIOB,
+		.GPIOInitTypeDef_t =
+		{
+			.Pin = 5,
+			.Mode = GPIO_MODE_AF_PP,
+			.Pull = GPIO_PULLDOWN,
+			.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
+			.Alternate = GPIO_AF2_TIM3,
+		},
+};
 
+
+
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
 {

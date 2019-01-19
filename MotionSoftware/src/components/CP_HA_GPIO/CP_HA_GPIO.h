@@ -4,9 +4,13 @@
 typedef struct GPIOStruct GPIOStruct_t;
 typedef GPIOStruct_t *const CP_HA_GPIO;
 
-extern CP_HA_GPIO pretensionMotorClockwiseDirection;
-extern CP_HA_GPIO pretensionMotorAnticlockwiseDirection;
-extern CP_HA_GPIO pretensionMotorEnable;
+/**
+ * Pretension Motor Pins
+ */
+extern CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection;
+extern CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection;
+extern CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable;
+extern CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance);
 void CP_HA_turnGPIOOn(CP_HA_GPIO GPIOInstance);

@@ -1,6 +1,8 @@
 #ifndef CP_HD_MOTORCONTROLBOARD_H
 #define CP_HD_MOTORCONTROLBOARD_H
 
+#include <stdint.h>
+
 typedef struct MotorControlBoardStruct MotorControlBoardStruct_t;
 typedef MotorControlBoardStruct_t* const CP_HD_MotorControlBoard;
 
@@ -11,5 +13,7 @@ void CP_HD_MotorControlBoard_setDirectionClockwise(CP_HD_MotorControlBoard Motor
 void CP_HD_MotorControlBoard_setDirectionAnticlockwise(CP_HD_MotorControlBoard MotorControlInstance);
 void CP_HD_MotorControlBoard_enableMotor(CP_HD_MotorControlBoard MotorControlInstance);
 void CP_HD_MotorControlBoard_disableMotor(CP_HD_MotorControlBoard MotorControlInstance);
+
+void CP_HD_MotorControlBoard_startPWM(CP_HD_MotorControlBoard MotorControlInstance, uint8_t pwm);
 
 #endif
