@@ -3,9 +3,17 @@
 #include <string.h>
 #include "GPIODefinition.h"
 
+/**
+ * Port D
+ */
 #define PRETENSION_MOTOR_CLOCKWISE_DIRECTION_GPIO_PORT 0
 #define PRETENSION_MOTOR_ANTICLOCKWISE_DIRECTION_GPIO_PORT 2
 #define PRETENSION_MOTOR_ENABLE_GPIO_PORT 4
+
+/**
+ * PORT B
+ */
+#define PRETENSION_MOTOR_PWM_GPIO_PORT 5
 
 
 static struct GPIOStruct pretensionMotorClockwiseDirectionInstance =
@@ -27,10 +35,16 @@ struct GPIOStruct pretensionMotorEnableInstance =
 
 };
 
-CP_HA_GPIO pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
-CP_HA_GPIO pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
-CP_HA_GPIO pretensionMotorEnable = &pretensionMotorEnableInstance;
+struct GPIOStruct pretensionMotorPWMInstance =
+{
+		.pin = (uint8_t)PRETENSION_MOTOR_PWM_GPIO_PORT,
+		.port = 'C',
+};
 
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
+CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
 
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
