@@ -49,6 +49,7 @@ static void initPorts(void)
 {
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
 }
 
 void setupHardware(void)
