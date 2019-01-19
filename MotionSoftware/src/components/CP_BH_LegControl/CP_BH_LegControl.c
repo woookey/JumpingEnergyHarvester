@@ -48,7 +48,7 @@ RFHandle WaitForPower(LegControlModule_t* const me, RFEvent *const evt)
 	{
 		// enable motor driver for pre-tensioner
 		CP_HD_MotorControlBoard_enableMotor(pretensionMotor);
-		CP_HD_MotorControlBoard_setDirectionClockwise(pretensionMotor);
+		CP_HD_MotorControlBoard_setDirectionAnticlockwise(pretensionMotor);
 		EXECUTE_TRANSITION((RFAgent const*)me, &NoMotionState);
 	}
 	}

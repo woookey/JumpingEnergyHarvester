@@ -20,7 +20,7 @@ struct GPIOStruct pretensionMotorAnticlockwiseDirectionInstance =
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
-				.Pin = 1,
+				.Pin = 2,
 				.Mode = GPIO_MODE_OUTPUT_PP,
 				.Pull = GPIO_PULLUP,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
@@ -32,7 +32,7 @@ struct GPIOStruct pretensionMotorEnableInstance =
 		.GPIOTypeDef_t = GPIOD,
 		.GPIOInitTypeDef_t =
 		{
-				.Pin = 2,
+				.Pin = 4,
 				.Mode = GPIO_MODE_OUTPUT_PP,
 				.Pull = GPIO_PULLUP,
 				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
