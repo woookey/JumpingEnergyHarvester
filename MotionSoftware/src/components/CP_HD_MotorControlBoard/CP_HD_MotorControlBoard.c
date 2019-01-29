@@ -34,8 +34,10 @@ void CP_HD_MotorControlBoard_initialiseMotor(CP_HD_MotorControlBoard MotorContro
 	CP_HA_initialiseGPIO((CP_HA_GPIO)*MotorControlInstance->enableMotorGPIO);
 	CP_HA_initialiseGPIO((CP_HA_GPIO)*MotorControlInstance->clockwiseDirectionGPIO);
 	CP_HA_initialiseGPIO((CP_HA_GPIO)*MotorControlInstance->anticlockwiseDirectionGPIO);
+
 	CP_HA_initialiseGPIO((CP_HA_GPIO)*MotorControlInstance->PWMSignalGPIO);
 	CP_HA_initialisePWM((CP_HA_PWM)*MotorControlInstance->PWMSignal);
+	//CP_HA_startPWM((CP_HA_PWM)*MotorControlInstance->PWMSignal);
 	MotorControlInstance->isInitialised = true;
 }
 
