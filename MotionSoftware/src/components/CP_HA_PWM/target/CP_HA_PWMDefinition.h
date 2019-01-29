@@ -7,6 +7,8 @@
 struct PWMStruct
 {
 	TIM_HandleTypeDef htim;
+	TIM_ClockConfigTypeDef clockConfig;
+	TIM_OC_InitTypeDef outputCompareConfig;
 };
 
 #endif
