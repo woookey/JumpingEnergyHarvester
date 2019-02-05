@@ -8,6 +8,6 @@ extern RFAgent * const LoggingManager;
 /**
  * Constructor for Logging Manager
  */
-void LoggingManagerConstructor(RFAgent * const self);
+void CP_BH_LoggingManagerConstructor(RFAgent * const self);
 
 #endif

@@ -19,9 +19,9 @@ static RFHandle initialState(LoggingManagerAgent* const self, RFEvent *const evt
 static RFHandle loggingState(LoggingManagerAgent* const self, RFEvent *const evt);
 
 
-void LoggingManagerConstructor(RFAgent * const self)
+void CP_BH_LoggingManagerConstructor(RFAgent * const self)
 {
-	assert(self == PowerManager);
+	assert(self == LoggingManager);
 	LoggingManagerAgent* const me = (LoggingManagerAgent* const)self;
 	RFBaseAgentConstructor((RFAgent* const) me, &initialState);
 }

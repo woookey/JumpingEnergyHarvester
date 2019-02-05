@@ -15,12 +15,8 @@ ifeq (${CC}, arm-none-eabi-gcc)
 	CFLAGS += ${CPU_CONFIG}
 endif
 
-#test: LEDManager.o
-#	cd ${CUR_DIR}/tests; make test
-
 CP_BH_LoggingManager.o: CP_BH_LoggingManager.c CP_BH_LoggingManager.h ${OBJS}  
 	${CC} ${CFLAGS} ${INCLUDE_DIR} CP_BH_LoggingManager.c
 
 clean:
 	rm -rf *.o *~
-	#cd ${CUR_DIR}/tests; make clean
