@@ -25,6 +25,7 @@ INCLUDE_DIRS += -I../../components/CP_HA_LED/
 INCLUDE_DIRS += -I../../components/CP_HA_HardwareSetup/
 INCLUDE_DIRS += -I../../components/CP_BH_LegControl/
 INCLUDE_DIRS += -I../../components/CP_HD_MotorControlBoard/
+INCLUDE_DIRS += -I../../components/CP_BH_LoggingManager/
 INCLUDE_DIRS += -I../../components/CP_HA_GPIO/
 INCLUDE_DIRS += -I../../components/CP_HA_PWM/
 INCLUDE_DIRS += -I../../system/
@@ -47,6 +48,7 @@ DEPENDENCIES += ../../components/CP_BH_LegControl/CP_BH_LegControl.o
 DEPENDENCIES += ../../components/CP_HD_MotorControlBoard/CP_HD_MotorControlBoard.o
 DEPENDENCIES += ../../components/CP_HA_GPIO/CP_HA_GPIO.o
 DEPENDENCIES += ../../components/CP_HA_PWM/CP_HA_PWM.o
+DEPENDENCIES += ../../components/CP_BH_LoggingManager/CP_BH_LoggingManager.o
 
 KERNEL_OBJS = ${RF_KERNEL_DIR}/RF_porting.o
 KERNEL_OBJS += ${RF_KERNEL_DIR}/RF_queue.o
