@@ -3,7 +3,8 @@
 #include <RF_timers.h>
 #include <systemSignals.h>
 #include <assert.h>
-#include "CP_BH_LoggingManager.h"
+#include <CP_BH_LoggingManager.h>
+#include <CP_HD_Logger.h>
 
 
 typedef struct LoggingManager
@@ -43,6 +44,7 @@ RFHandle loggingState(LoggingManagerAgent* const self, RFEvent *const evt)
 	case RF_INITIAL_SIGNAL:
 	{
 		// Send data to UART
+		CP_HD_Logger_initialise();
 		return RF_HANDLED;
 	}
 	case RF_EXIT_SIGNAL:
