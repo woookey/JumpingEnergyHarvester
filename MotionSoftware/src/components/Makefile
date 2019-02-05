@@ -11,6 +11,10 @@ build_components:
 	make build_components_CP_HA_DigitalInput
 	make build_components_CP_HD_MotorControlBoard
 	make build_components_CP_BH_LegControl
+	make build_components_CP_BH_LoggingManager
+	
+build_components_CP_BH_LoggingManager:
+	cd ${CUR_DIR}/CP_BH_LoggingManager; make CP_BH_LoggingManager.o CC=${CC}
 	
 build_components_CP_HD_MotorControlBoard:
 	cd ${CUR_DIR}/CP_HD_MotorControlBoard; make CP_HD_MotorControlBoard.o CC=${CC}
@@ -63,5 +67,6 @@ clean:
 	cd ${CUR_DIR}/CP_HA_GPIO; make clean
 	cd ${CUR_DIR}/CP_HD_MotorControlBoard; make clean
 	cd ${CUR_DIR}/CP_HA_PWM; make clean
+	cd ${CUR_DIR}/CP_BH_LoggingManager; make clean
 	
 	
