@@ -34,6 +34,9 @@ RFHandle initialState(LoggingManagerAgent* const self, RFEvent *const evt)
 	/**
 	 * Subscribe to signals here
 	 */
+
+	// Initialise logger hardware
+	CP_HD_Logger_initialise();
 	INITIAL_TRANSITION((RFAgent*) self, &loggingState);
 }
 
@@ -44,7 +47,7 @@ RFHandle loggingState(LoggingManagerAgent* const self, RFEvent *const evt)
 	case RF_INITIAL_SIGNAL:
 	{
 		// Send data to UART
-		CP_HD_Logger_initialise();
+		CP_HD_Logger_sendData();
 		return RF_HANDLED;
 	}
 	case RF_EXIT_SIGNAL:
