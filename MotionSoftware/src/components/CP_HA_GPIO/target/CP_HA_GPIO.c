@@ -52,10 +52,39 @@ struct GPIOStruct pretensionMotorPWMInstance =
 		},
 };
 
+struct GPIOStruct LoggerRxInstance =
+{
+		.GPIOTypeDef_t = GPIOC,
+		.GPIOInitTypeDef_t =
+		{
+			.Pin = GPIO_PIN_11,
+			.Mode = GPIO_MODE_AF_PP,
+			.Pull = GPIO_PULLDOWN,
+			.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
+			.Alternate = GPIO_AF8_UART4,
+		},
+};
+
+struct GPIOStruct LoggerTxInstance =
+{
+		.GPIOTypeDef_t = GPIOC,
+		.GPIOInitTypeDef_t =
+		{
+			.Pin = GPIO_PIN_10,
+			.Mode = GPIO_MODE_AF_PP,
+			.Pull = GPIO_PULLDOWN,
+			.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
+			.Alternate = GPIO_AF8_UART4,
+		},
+};
+
+
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
+CP_HA_GPIO CP_HA_GPIO_LoggerRx = &LoggerRxInstance;
+CP_HA_GPIO CP_HA_GPIO_LoggerTx = &LoggerTxInstance;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
 {
