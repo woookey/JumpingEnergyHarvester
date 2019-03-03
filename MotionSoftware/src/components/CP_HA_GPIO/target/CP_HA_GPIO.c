@@ -59,7 +59,7 @@ struct GPIOStruct LoggerRxInstance =
 		{
 			.Pin = GPIO_PIN_11,
 			.Mode = GPIO_MODE_AF_PP,
-			.Pull = GPIO_PULLDOWN,
+			.Pull = GPIO_PULLUP,
 			.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
 			.Alternate = GPIO_AF8_UART4,
 		},
@@ -72,7 +72,7 @@ struct GPIOStruct LoggerTxInstance =
 		{
 			.Pin = GPIO_PIN_10,
 			.Mode = GPIO_MODE_AF_PP,
-			.Pull = GPIO_PULLDOWN,
+			.Pull = GPIO_PULLUP,
 			.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
 			.Alternate = GPIO_AF8_UART4,
 		},
