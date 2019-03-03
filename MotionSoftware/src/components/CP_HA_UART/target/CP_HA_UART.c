@@ -8,7 +8,7 @@ static UART_HandleTypeDef LoggerUART4 =
 	.Instance = UART4,
 	.Init =
 	{
-			.BaudRate = 20000000,
+			.BaudRate = 115200,
 			.WordLength = UART_WORDLENGTH_8B,
 			.StopBits = UART_STOPBITS_1,
 			.Parity = UART_PARITY_NONE,
@@ -20,8 +20,9 @@ static UART_HandleTypeDef LoggerUART4 =
 
 void CP_HA_UART_sendMessage(void)
 {
-	uint8_t data[2] = {100, 105};
-	HAL_UART_Transmit(&LoggerUART4, data, (uint16_t)2, (uint32_t)2);
+	char* x = "\rHello World!\n";
+	uint8_t data[1] = {88};
+	HAL_UART_Transmit(&LoggerUART4, x, (uint16_t)strlen(x), (uint32_t)1);
 }
 
 void CP_HA_UART_initialise(void)
