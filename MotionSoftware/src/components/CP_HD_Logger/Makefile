@@ -5,6 +5,7 @@ CFLAGS = -Wall -g -I. -c
 CPU_CONFIG = --specs=nosys.specs -mthumb -mcpu=cortex-m4
 
 INC_DIR = -I${CUR_DIR}/../CP_HA_UART/
+INC_DIR += -I${CUR_DIR}/../CP_HA_GPIO/
 
 ifeq (${CC}, arm-none-eabi-gcc)
 	INC_DIR += -I${CUR_DIR}/../CP_HA_UART/target/ 

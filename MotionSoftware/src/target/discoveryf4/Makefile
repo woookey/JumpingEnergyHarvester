@@ -34,12 +34,14 @@ INCLUDE_DIRS += -I../../system/
 INCLUDE_DIRS += -I../../kernel/
 
 HAL_SRC = ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_rcc.c 
+#HAL_SRC = ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_rcc_ex.c 
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal.c 
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_gpio.c 
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_cortex.c 
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_tim.c
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_tim_ex.c 
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_dma.c
+HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_uart.c
 
 DEPENDENCIES += ../../components/LEDManager/LEDManager.o
 DEPENDENCIES += ../../components/CP_BH_PowerManager/CP_BH_PowerManager.o
