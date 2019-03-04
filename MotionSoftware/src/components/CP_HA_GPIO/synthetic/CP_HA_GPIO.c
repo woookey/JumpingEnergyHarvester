@@ -14,7 +14,6 @@
  * PORT B
  */
 #define PRETENSION_MOTOR_PWM_GPIO_PORT 5
-#define JOINT1_SENSOR_GPIO_PORT 2
 
 /**
  * PORT C
@@ -60,19 +59,12 @@ struct GPIOStruct LoggerTxInstance =
 		.port = 'C',
 };
 
-struct GPIOStruct Joint1SensorInstance =
-{
-		.pin = (uint8_t)JOINT1_SENSOR_GPIO_PORT,
-		.port = 'B',
-};
-
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerRx = &LoggerRxInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerTx = &LoggerTxInstance;
-CP_HA_GPIO CP_HA_GPIO_Joint1Sensor = &Joint1SensorInstance;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
 {
