@@ -78,6 +78,17 @@ struct GPIOStruct LoggerTxInstance =
 		},
 };
 
+struct GPIOStruct Joint1SensorInstance =
+{
+		.GPIOTypeDef_t = GPIOB,
+			.GPIOInitTypeDef_t =
+			{
+				.Pin = GPIO_PIN_2,
+				.Mode = GPIO_MODE_ANALOG,
+				.Pull = GPIO_PULLDOWN,
+				.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
+			},
+};
 
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
@@ -85,6 +96,7 @@ CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerRx = &LoggerRxInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerTx = &LoggerTxInstance;
+CP_HA_GPIO CP_HA_GPIO_Joint1Sensor = &Joint1SensorInstance;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
 {
