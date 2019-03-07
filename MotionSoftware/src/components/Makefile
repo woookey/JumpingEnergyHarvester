@@ -13,6 +13,7 @@ build_components:
 	make build_components_CP_BH_LoggingManager
 	make build_components_CP_HD_Logger
 	make build_components_CP_HA_UART
+	make build_components_CP_HA_ADC
 	
 build_components_CP_HA_UART:
 	cd ${CUR_DIR}/CP_HA_UART; make CP_HA_UART.o CC=${CC}
@@ -50,6 +51,9 @@ build_components_LEDManager:
 build_components_CP_BH_LegControl:
 	cd ${CUR_DIR}/CP_BH_LegControl; make CP_BH_LegControl.o CC=${CC}
 	
+build_components_CP_HA_ADC:
+	cd ${CUR_DIR}/CP_HA_ADC; make CP_HA_ADC.o CC=${CC}
+	
 test_components:
 	make test_components_LEDManager
 	make test_components_CP_HD_LEDDriver
@@ -59,6 +63,7 @@ test_components_LEDManager:
 	
 test_components_CP_HD_LEDDriver:
 	cd ${CUR_DIR}/CP_HD_LEDDriver; make test
+	
 
 clean:
 	cd $(CUR_DIR)/LEDManager; make clean
@@ -73,5 +78,6 @@ clean:
 	cd ${CUR_DIR}/CP_BH_LoggingManager; make clean
 	cd ${CUR_DIR}/CP_HD_Logger; make clean
 	cd ${CUR_DIR}/CP_HA_UART; make clean
+	cd ${CUR_DIR}/CP_HA_ADC; make clean
 	
 	
