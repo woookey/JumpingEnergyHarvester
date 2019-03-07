@@ -78,12 +78,25 @@ struct GPIOStruct LoggerTxInstance =
 		},
 };
 
+struct GPIOStruct AngularSensorJoint1 =
+{
+		.GPIOTypeDef_t = GPIOA,
+		.GPIOInitTypeDef_t =
+		{
+			.Pin = GPIO_PIN_2,
+			.Mode = GPIO_MODE_ANALOG,
+			.Pull = GPIO_PULLDOWN,
+			.Speed = GPIO_SPEED_FREQ_VERY_HIGH,
+		},
+};
+
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerRx = &LoggerRxInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerTx = &LoggerTxInstance;
+CP_HA_GPIO CP_HA_GPIO_angularSensorJoint1 = &AngularSensorJoint1;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
 {
