@@ -14,7 +14,11 @@ build_components:
 	make build_components_CP_HD_Logger
 	make build_components_CP_HA_UART
 	make build_components_CP_HA_ADC
+	make build_components_CP_HD_AnalogInput
 	
+build_components_CP_HD_AnalogInput:
+	cd ${CUR_DIR}/CP_HD_AnalogInput; make CP_HD_AnalogInput.o CC=${CC}
+
 build_components_CP_HA_UART:
 	cd ${CUR_DIR}/CP_HA_UART; make CP_HA_UART.o CC=${CC}
 	
@@ -79,5 +83,6 @@ clean:
 	cd ${CUR_DIR}/CP_HD_Logger; make clean
 	cd ${CUR_DIR}/CP_HA_UART; make clean
 	cd ${CUR_DIR}/CP_HA_ADC; make clean
+	cd ${CUR_DIR}/CP_HD_AnalogInput; make clean
 	
 	

@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <CP_BH_LoggingManager.h>
 #include <CP_HD_Logger.h>
+#include <CP_HD_AnalogInput.h>
 
 
 typedef struct LoggingManager
@@ -49,6 +50,7 @@ RFHandle initialState(LoggingManagerAgent* const self, RFEvent *const evt)
 
 	// Initialise logger hardware
 	CP_HD_Logger_initialise();
+	CP_HD_AnalogInput_initialise();
 	INITIAL_TRANSITION((RFAgent*) self, &loggingState);
 }
 
@@ -60,7 +62,8 @@ RFHandle loggingState(LoggingManagerAgent* const self, RFEvent *const evt)
 	case LOGGING_SIGNAL:
 	{
 		// Send data to UART
-		CP_HD_Logger_sendData();
+		//CP_HD_Logger_sendData();
+		CP_HD_AnalogInput_readData();
 		RFTimer_armTimer((RF_Timer*) &self->loggingTimer, LOGGING_TIMEOUT_IN_MS);
 		return RF_HANDLED;
 	}
@@ -71,4 +74,12 @@ RFHandle loggingState(LoggingManagerAgent* const self, RFEvent *const evt)
 	}
 	}
 	return RF_UNHANDLED;
+}
+
+/**
+ * Data Logging
+ */
+void CP_HD_AnalogInput_readDataCallback(uint8_t analogReading)
+{
+	CP_HD_Logger_sendData(&analogReading, (uint8_t)1);
 }

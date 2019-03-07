@@ -81,7 +81,15 @@ struct ADCStruct AngularSensorJoint1 =
 
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
 */
+static struct ADCStruct AngularSensorJoint1Instance;
+CP_HA_ADC CP_HA_ADC_angularSensorJoint1 = &AngularSensorJoint1Instance;
 
 
-void CP_HA_initialiseADC(CP_HA_ADC ADCInstance){}
-void CP_HA_readADC(CP_HA_ADC ADCInstance){}
+void CP_HA_initialiseADC(CP_HA_ADC ADCInstance)
+{
+}
+
+uint8_t CP_HA_readADC(CP_HA_ADC ADCInstance)
+{
+	return (uint8_t)100;
+}

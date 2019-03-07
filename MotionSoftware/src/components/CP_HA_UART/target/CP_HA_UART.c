@@ -18,11 +18,11 @@ static UART_HandleTypeDef LoggerUART4 =
 	},
 };
 
-void CP_HA_UART_sendMessage(void)
+void CP_HA_UART_sendMessage(uint8_t* data, uint8_t length)
 {
-	char* x = "\rHello World!\n";
-	uint8_t data[1] = {88};
-	HAL_UART_Transmit(&LoggerUART4, x, (uint16_t)strlen(x), (uint32_t)1);
+	//unsigned char* x = "\rHello World!\n";
+	//HAL_UART_Transmit(&LoggerUART4, x, (uint16_t)strlen(x), (uint32_t)1);
+	HAL_UART_Transmit(&LoggerUART4, data, (uint16_t)length, (uint32_t)1);
 }
 
 void CP_HA_UART_initialise(void)

@@ -64,7 +64,7 @@ struct GPIOStruct LoggerTxInstance =
 		.port = 'C',
 };
 
-struct GPIOStruct AngularSensorJoint1 =
+static struct GPIOStruct AngularSensorJoint1 =
 {
 		.pin = (uint8_t)ANGULAR_SENSOR_JOINT_1_GPIO_PORT,
 		.port = 'A',

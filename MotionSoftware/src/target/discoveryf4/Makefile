@@ -30,6 +30,8 @@ INCLUDE_DIRS += -I../../components/CP_HA_GPIO/
 INCLUDE_DIRS += -I../../components/CP_HA_PWM/
 INCLUDE_DIRS += -I../../components/CP_HD_Logger/
 INCLUDE_DIRS += -I../../components/CP_HA_UART/
+INCLUDE_DIRS += -I../../components/CP_HD_AnalogInput/
+INCLUDE_DIRS += -I../../components/CP_HA_ADC/
 INCLUDE_DIRS += -I../../system/
 INCLUDE_DIRS += -I../../kernel/
 
@@ -41,6 +43,8 @@ HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_tim.c
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_tim_ex.c 
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_dma.c
 HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_uart.c
+HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_adc.c
+HAL_SRC += ${STM32_HAL_DRIVER_SRC_PATH}/stm32f4xx_hal_adc_ex.c
 
 DEPENDENCIES += ../../components/LEDManager/LEDManager.o
 DEPENDENCIES += ../../components/CP_BH_PowerManager/CP_BH_PowerManager.o
@@ -54,6 +58,8 @@ DEPENDENCIES += ../../components/CP_HA_PWM/CP_HA_PWM.o
 DEPENDENCIES += ../../components/CP_BH_LoggingManager/CP_BH_LoggingManager.o
 DEPENDENCIES += ../../components/CP_HD_Logger/CP_HD_Logger.o
 DEPENDENCIES += ../../components/CP_HA_UART/CP_HA_UART.o
+DEPENDENCIES += ../../components/CP_HD_AnalogInput/CP_HD_AnalogInput.o
+DEPENDENCIES += ../../components/CP_HA_ADC/CP_HA_ADC.o
 
 KERNEL_OBJS = ${RF_KERNEL_DIR}/RF_porting.o
 KERNEL_OBJS += ${RF_KERNEL_DIR}/RF_queue.o

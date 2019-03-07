@@ -15,7 +15,7 @@ void CP_HD_Logger_initialise(void)
 /**
  * Send any message packet
  */
-void CP_HD_Logger_sendData(void)
+void CP_HD_Logger_sendData(uint8_t* data, uint8_t length)
 {
-	CP_HA_UART_sendMessage();
+	CP_HA_UART_sendMessage(data, length);
 }

@@ -7,6 +7,7 @@ CPU_CONFIG = --specs=nosys.specs -mthumb -mcpu=cortex-m4
 INCLUDE_DIR = -I${KERNEL_DIR}
 INCLUDE_DIR += -I${SYSTEM_DIR}
 INCLUDE_DIR += -I${CUR_DIR}/../CP_HD_Logger
+INCLUDE_DIR += -I${CUR_DIR}/../CP_HD_AnalogInput
 
 OBJS = ${KERNEL_DIR}/RF_agents.o
 OBJS += ${KERNEL_DIR}/RF_events.o

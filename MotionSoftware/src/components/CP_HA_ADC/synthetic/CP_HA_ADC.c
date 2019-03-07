@@ -6,7 +6,7 @@
 
 
 
-struct ADCStruct AngularSensorJoint1 =
+static struct ADCStruct AngularSensorJoint1 =
 {
 		.name = "AngularSensorJoint1",
 		.value = (uint8_t)100,
@@ -19,7 +19,8 @@ void CP_HA_initialiseADC(CP_HA_ADC ADCInstance)
 	printf("%s initialised\n", ADCInstance->name);
 }
 
-void CP_HA_readADC(CP_HA_ADC ADCInstance)
+uint8_t CP_HA_readADC(CP_HA_ADC ADCInstance)
 {
-	printf("%s value = %d\n", ADCInstance->name, ADCInstance->value);
+	//printf("%s value = %d\n", ADCInstance->name, ADCInstance->value);
+	return ADCInstance->value;
 }
