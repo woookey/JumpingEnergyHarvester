@@ -2,6 +2,7 @@
 #include <stm32f4xx_hal_dma.h>
 #include <stm32f4xx_hal_uart.h>
 #include <stm32f4xx_hal_rcc.h>
+#include <string.h>
 
 static UART_HandleTypeDef LoggerUART4 =
 {
