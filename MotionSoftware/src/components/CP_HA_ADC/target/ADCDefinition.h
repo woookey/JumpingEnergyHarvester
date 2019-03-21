@@ -6,6 +6,8 @@
 
 struct ADCStruct
 {
+	ADC_HandleTypeDef ADCHandle;
+	ADC_ChannelConfTypeDef ADCChannelConfig;
 };
 
 #endif
