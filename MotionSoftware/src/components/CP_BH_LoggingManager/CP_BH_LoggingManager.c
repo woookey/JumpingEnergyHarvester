@@ -21,7 +21,7 @@ typedef enum
 
 typedef enum
 {
-	LOGGING_TIMEOUT_IN_MS = 500U,
+	LOGGING_TIMEOUT_IN_MS = 1U,
 } PrivateDefinitions;
 
 static LoggingManagerAgent LoggingManagerInstance;
