@@ -22,7 +22,7 @@ build_target:
 	cd ${COMPONENTS_DIR}; make build_components CC=arm-none-eabi-gcc
 	cd ${TARGET_BUILD}; make build_target
 	mkdir -p bld/target
-	cp ${TARGET_BUILD}/ARM_main.axf ${CUR_DIR}/bld/target
+	cp ${TARGET_BUILD}/ARM_main.elf ${CUR_DIR}/bld/target
 	cp ${TARGET_BUILD}/ARM_main.bin ${CUR_DIR}/bld/target
 
 

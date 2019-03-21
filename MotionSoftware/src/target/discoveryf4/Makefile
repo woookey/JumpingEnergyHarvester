@@ -74,8 +74,8 @@ build_target: ${DEPENDENCIES} ${KERNEL_OBJS}
 	${CC_TARGET} ${CC_CONFIG} ${CPU_CONFIG} -Os \
 	${CFLAGS} ${INCLUDE_DIRS} ${LFLAGS} ${CMSIS_STARTUP_INC_PATH}/startup_stm32f407xx.s \
 	${DEPENDENCIES} ${KERNEL_OBJS} ARM_main.c ${CMSIS_SYSTEM_CONFIG_INC_PATH}/system_stm32f4xx.c \
-	${HAL_SRC} ${DEFS} -o ARM_main.axf;
-	arm-none-eabi-objcopy -O binary ARM_main.axf ARM_main.bin
+	${HAL_SRC} ${DEFS} -o ARM_main.elf;
+	arm-none-eabi-objcopy -O binary ARM_main.elf ARM_main.bin
 	
 build_synthetic: ${DEPENDENCIES} ${KERNEL_OBJS} 
 	${CC_SYNTHETIC} -g -Wall ${CFLAGS} ${INCLUDE_DIRS} \
@@ -88,6 +88,6 @@ startup:
 	${CC_TARGET} ${CC_CONFIG} ${CPU_CONFIG} -I../../lib/CMSIS/Include/ -I ../../lib/CMSIS/Device/ST/STM32F4xx/Include/ ${DEFS} -Os -c ../../lib/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s -o startup.o
 	
 clean:
-	rm -rf *~ *.axf *.bin ARM_main_synth *o ARM_main
+	rm -rf *~ *.axf *.bin *.elf ARM_main_synth *o ARM_main
 	
 	
