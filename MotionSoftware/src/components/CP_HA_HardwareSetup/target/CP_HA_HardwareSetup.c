@@ -35,7 +35,7 @@ static void initClocks(void)
 
     RCC_ClkInitTypeDef rccClkInstance =
     {
-    		  .ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK,
+    		  .ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2,
     		  .SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK,
     		  .AHBCLKDivider = RCC_SYSCLK_DIV1,
     		  .APB1CLKDivider = RCC_HCLK_DIV4,
