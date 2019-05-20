@@ -32,7 +32,7 @@ static struct PWMStruct pretensionMotorPWMInstance =
 	.outputCompareConfig =
 	{
 			.OCMode = TIM_OCMODE_PWM1,
-			.Pulse = (uint32_t)30000, // TODO: How is Pulse related to Period of the timer?
+			.Pulse = (uint32_t)50000, // TODO: How is Pulse related to Period of the timer?
 			.OCPolarity = TIM_OCPOLARITY_HIGH,
 			//.OCNPolarity = , not valid for TIM3
 			.OCFastMode = TIM_OCFAST_ENABLE,

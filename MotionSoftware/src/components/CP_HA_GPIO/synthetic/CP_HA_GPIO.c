@@ -20,11 +20,14 @@
  */
 #define LOGGER_RX_GPIO_PORT 11
 #define LOGGER_TX_GPIO_PORT 10
+#define ANGULAR_SENSOR_PRETENSION_MOTOR_GPIO_PORT 0
 
 /**
  * PORT A
  */
 #define ANGULAR_SENSOR_JOINT_1_GPIO_PORT 2
+#define ANGULAR_SENSOR_JOINT_2_GPIO_PORT 4
+#define ANGULAR_SENSOR_EQUILIBRIUM_MOTOR_GPIO_PORT 6
 
 
 static struct GPIOStruct pretensionMotorClockwiseDirectionInstance =
@@ -70,6 +73,24 @@ static struct GPIOStruct AngularSensorJoint1 =
 		.port = 'A',
 };
 
+static struct GPIOStruct AngularSensorJoint2 =
+{
+		.pin = (uint8_t)ANGULAR_SENSOR_JOINT_2_GPIO_PORT,
+		.port = 'A',
+};
+
+static struct GPIOStruct AngularSensorPretensionMotor =
+{
+		.pin = (uint8_t)ANGULAR_SENSOR_PRETENSION_MOTOR_GPIO_PORT,
+		.port = 'C',
+};
+
+static struct GPIOStruct AngularSensorEquilibriumMotor =
+{
+		.pin = (uint8_t)ANGULAR_SENSOR_EQUILIBRIUM_MOTOR_GPIO_PORT,
+		.port = 'A',
+};
+
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorClockwiseDirection = &pretensionMotorClockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorAnticlockwiseDirection = &pretensionMotorAnticlockwiseDirectionInstance;
 CP_HA_GPIO CP_HA_GPIO_pretensionMotorEnable = &pretensionMotorEnableInstance;
@@ -77,6 +98,9 @@ CP_HA_GPIO CP_HA_GPIO_pretensionMotorPWM = &pretensionMotorPWMInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerRx = &LoggerRxInstance;
 CP_HA_GPIO CP_HA_GPIO_LoggerTx = &LoggerTxInstance;
 CP_HA_GPIO CP_HA_GPIO_angularSensorJoint1 = &AngularSensorJoint1;
+CP_HA_GPIO CP_HA_GPIO_angularSensorJoint2 = &AngularSensorJoint2;
+CP_HA_GPIO CP_HA_GPIO_angularSensorPretensionMotor = &AngularSensorPretensionMotor;
+CP_HA_GPIO CP_HA_GPIO_angularSensorEquilibriumMotor = &AngularSensorEquilibriumMotor;
 
 void CP_HA_initialiseGPIO(CP_HA_GPIO GPIOInstance)
 {
