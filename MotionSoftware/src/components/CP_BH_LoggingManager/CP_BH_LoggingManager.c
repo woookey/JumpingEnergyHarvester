@@ -79,16 +79,14 @@ RFHandle loggingState(LoggingManagerAgent* const self, RFEvent *const evt)
 /**
  * Data Logging
  */
-void CP_HD_AnalogInput_readDataCallback(uint8_t analogReading)
+void CP_HD_AnalogInput_readDataCallback(uint8_t* analogReadings)
 {
-	static uint8_t payload[3];
-	static uint8_t secondSensor = 0;
+	static uint8_t payload[4];
 	payload[0] = 0xAA;
-	payload[1] = analogReading;
-	payload[2] = (uint8_t)100;
-	//payload[3] = (uint8_t)100;
-	//payload[4] = (uint8_t)255;
-	CP_HD_Logger_sendData(&payload[0], (uint8_t)1);
-	CP_HD_Logger_sendData(&payload[1], (uint8_t)1);
-	CP_HD_Logger_sendData(&payload[2], (uint8_t)1);
+	payload[1] = analogReadings[0];
+	payload[2] = analogReadings[1];
+	payload[3] = analogReadings[2];
+	//payload[4] = analogReadings[3];
+
+	CP_HD_Logger_sendData(payload, (uint8_t)4);
 }

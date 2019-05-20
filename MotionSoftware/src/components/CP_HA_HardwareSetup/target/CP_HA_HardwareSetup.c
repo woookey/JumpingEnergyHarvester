@@ -54,6 +54,8 @@ static void initPorts(void)
 
 	// Enable ADC clock
 	__HAL_RCC_ADC1_CLK_ENABLE();
+	__HAL_RCC_ADC2_CLK_ENABLE();
+	__HAL_RCC_ADC3_CLK_ENABLE();
 }
 
 void setupHardware(void)

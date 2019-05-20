@@ -14,8 +14,8 @@ void CP_HD_AnalogInput_initialise(void);
 void CP_HD_AnalogInput_readData(void);
 
 /**
- * To be implemented in the application layer
+ * Application layer implementation
  */
-extern void CP_HD_AnalogInput_readDataCallback(uint8_t analogReading);
+extern void CP_HD_AnalogInput_readDataCallback(uint8_t* analogReadings);
 
 #endif
